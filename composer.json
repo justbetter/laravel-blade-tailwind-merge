@@ -1,0 +1,34 @@
+{
+    "name": "justbetter/laravel-blade-tailwind-merge",
+    "description": "Tailwind classes merging with Laravel Blade components",
+    "type": "package",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "*"
+    },
+    "authors": [
+        {
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
+            "homepage": "https://royduineveld.nl",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JustBetter\\LaravelBladeTailwindMerge\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JustBetter\\LaravelBladeTailwindMerge\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
