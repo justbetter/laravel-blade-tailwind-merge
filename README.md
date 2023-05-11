@@ -24,7 +24,7 @@ composer require justbetter/laravel-blade-tailwind-merge
 
 ## Usage
 
-From the example above, just use `->tailwind('...')` instead of `->merge(['class' => '...')` or `->class('...')` when you need this.
+From the example above, just use `tailwind('...')` instead of `merge(['class' => '...')` or `class('...')` when you need this.
 ```
 <a {{ $attributes->tailwind('flex px-5') }}>
    {{ $slot }}
@@ -33,7 +33,7 @@ From the example above, just use `->tailwind('...')` instead of `->merge(['class
 
 ## Known issues
 
-Currently the merging works only by checking the first part before the dash. So `text-red-500` overwrites `text-xl` and visa versa because we only check for `text-*`. To fix this we need to know all Tailwind options just like [tailwind-merge](https://github.com/dcastil/tailwind-merge) does.
+Currently the merging works only by checking the first part before the dash. So `text-red-500` overwrites `text-xl` and visa versa because we only check for `text-*`. To fix this we need to know all Tailwind options just like [tailwind-merge](https://github.com/dcastil/tailwind-merge) does. Maybe in the future... but a PR is welcome!
 
 ## References
 
