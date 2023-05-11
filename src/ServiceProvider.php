@@ -2,6 +2,7 @@
 
 namespace JustBetter\LaravelBladeTailwindMerge;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 use Illuminate\Support\Str;
 use Illuminate\View\ComponentAttributeBag;
@@ -11,6 +12,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         ComponentAttributeBag::macro('tailwind', function ($classList) {
+            $classList = Arr::toCssClasses($classList);
             $this->attributes['class'] = collect(explode(" ", $classList))
                 ->mapWithKeys(fn($v) => [Str::of($v)->match("/.*?\-/")->toString() => $v])
                 ->merge(
