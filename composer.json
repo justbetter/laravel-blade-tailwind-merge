@@ -30,5 +30,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "suggest": {
+        "gehrisandro/tailwind-merge-php": "Uses tailwind-merge-php instead of the built-in merger"
+    }
 }

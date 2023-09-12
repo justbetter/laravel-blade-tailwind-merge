@@ -13,6 +13,14 @@ class ServiceProvider extends BaseServiceProvider
     {
         ComponentAttributeBag::macro('tailwind', function ($classList) {
             $classList = Arr::toCssClasses($classList);
+
+            if(class_exists('\TailwindMerge\TailwindMerge')) {
+                $this->attributes['class'] = \TailwindMerge\TailwindMerge::instance()
+                    ->merge($this->attributes['class'] ?? '', $classList);
+                
+                return $this;
+            }
+            
             $this->attributes['class'] = collect(explode(" ", $classList))
                 ->mapWithKeys(fn($v) => [Str::of($v)->match("/.*?\-/")->toString() => $v])
                 ->merge(
