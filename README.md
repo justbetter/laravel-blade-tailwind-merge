@@ -1,3 +1,5 @@
+> **Archived as there is a new package which solves the known issues of this package: [tailwind-merge-laravel](https://github.com/gehrisandro/tailwind-merge-laravel)**
+
 # Laravel Blade Tailwind Merge
 
 This package adds a `->tailwind()` method to the attribute bag used within [Blade Components](https://laravel.com/docs/master/blade#component-attributes) which let you overwrite classes.
